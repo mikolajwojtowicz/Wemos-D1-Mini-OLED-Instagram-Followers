@@ -5,7 +5,7 @@ A small Wemos D1 mini project for the 0.66" OLED Hat (64x48) that fetches an Ins
 ## Features
 
 - connects to WiFi
-- requests Instagram profile data through RapidAPI
+- requests Instagram profile data through [RapidAPI](https://rapidapi.com/ariefsam/api/easy-instagram-service)
 - extracts the `follower` field from the API response
 - displays the follower count on a 64x48 OLED
 - formats larger numbers with `K` for better readability on a very small screen
@@ -48,7 +48,7 @@ This project uses:
 
 ## Configuration
 
-Main configuration values are in [src/main.cpp](src/main.cpp):
+Main configuration values are in [main.cpp](main.cpp):
 
 - `ssid`
 - `password`
@@ -86,7 +86,7 @@ This keeps the implementation small enough for the ESP8266 and easy to maintain.
 ## How To Run
 
 1. Open the project in PlatformIO.
-2. Fill in your WiFi and RapidAPI credentials in [src/main.cpp](src/main.cpp).
+2. Fill in your WiFi and RapidAPI credentials in [main.cpp](main.cpp).
 3. Upload the firmware to the board.
 4. Open the serial monitor.
 
@@ -104,7 +104,7 @@ Example:
 WiFi Connected!
 Starting RapidAPI request (attempt 1/3)...
 HTTP code: 200
-Followers: 4889
+Followers: 3300
 ```
 
 ## Error Handling
@@ -121,13 +121,3 @@ Common error codes:
 - `-2` HTTP response other than `200`
 - `-3` empty response body
 - `-4` follower field not found in the response
-
-## Files
-
-- [platformio.ini](platformio.ini) - PlatformIO configuration
-- [src/main.cpp](src/main.cpp) - main firmware file
-
-## Short Project Summary
-
-Live Instagram follower counter for Wemos D1 mini and a 64x48 OLED Hat, powered by RapidAPI and optimized for a very small display.
-
