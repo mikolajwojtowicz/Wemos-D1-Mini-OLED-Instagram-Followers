@@ -18,12 +18,15 @@ Examples shown on the OLED:
 - `10.2K`
 - `48.9K`
 - `101K`
+- `1.2M`
 
 Formatting rules:
 
 - below `10000`: raw value, for example `4889`
 - from `10000` to `99999`: `xx.xK`, for example `10.4K`
-- from `100000`: rounded `xxxK`, for example `101K`
+- from `100000` to `999999`: rounded `xxxK`, for example `101K`
+- from `1000000` to `9999999`: `x.xM`, for example `1.2M`
+- from `10000000`: rounded `xxM`, for example `12M`
 
 ## Hardware
 
