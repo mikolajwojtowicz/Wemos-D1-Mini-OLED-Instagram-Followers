@@ -220,15 +220,28 @@ String formatFollowers(long followersCount)
     return String(followersCount);
   }
 
-  if (followersCount < 100000)
+  if (followersCount < 1000000)
   {
-    long thousands = followersCount / 1000;
-    long decimal = (followersCount % 1000) / 100;
-    return String(thousands) + "." + String(decimal) + "K";
+    if (followersCount < 100000)
+    {
+      long thousands = followersCount / 1000;
+      long decimal = (followersCount % 1000) / 100;
+      return String(thousands) + "." + String(decimal) + "K";
+    }
+
+    long roundedThousands = (followersCount + 500) / 1000;
+    return String(roundedThousands) + "K";
   }
 
-  long roundedThousands = (followersCount + 500) / 1000;
-  return String(roundedThousands) + "K";
+  if (followersCount < 10000000)
+  {
+    long millions = followersCount / 1000000;
+    long decimal = (followersCount % 1000000) / 100000;
+    return String(millions) + "." + String(decimal) + "M";
+  }
+
+  long roundedMillions = (followersCount + 500000) / 1000000;
+  return String(roundedMillions) + "M";
 }
 
 void renderFollowerCount(long followersCount)
